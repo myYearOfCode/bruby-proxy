@@ -1,5 +1,5 @@
 # bruby-proxy
-Bruby-proxy is a python api proxy server that enables an IOT homebrewing appliance to connect to the bruby heroku instance. This is used in conjunction with a local dns redirect.
+Bruby-proxy is a python api proxy server that enables an IOT homebrewing appliance to connect to the [bruby](https://github.com/myYearOfCode/bruby) heroku instance. This is used in conjunction with a local dns redirect. It can also be used in other ways as a way to do a url-to-url redirect.
 ![bruby-proxy terminal screengrab](https://s3.amazonaws.com/bruby/github_images/Screen+Shot+2019-05-19+at+10.03.13+PM.png)
  
  ## Demo Setup.
