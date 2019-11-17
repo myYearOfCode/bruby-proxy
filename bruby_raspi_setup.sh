@@ -8,7 +8,7 @@
 # onto the boot volume.
 # create a file named `ssh` on the boot volume (unless you want to connect another way)
 # eject card, start up raspberry pi and ssh in.
-# wget <this file url>
+# wget https://raw.githubusercontent.com/myYearOfCode/bruby-proxy/master/bruby_raspi_setup.sh
 # chmod +x bruby_raspi_setup.sh 
 # sudo ./bruby_raspi_setup.sh (and then wait a while for updates to happen)
 #######
