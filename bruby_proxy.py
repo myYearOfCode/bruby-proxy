@@ -13,7 +13,7 @@ import urllib2
 from time import gmtime, strftime
 
 logStamp=strftime("%Y%m%d", gmtime())
-apiLog = './logs/%s_API_CALLS.txt' % logStamp
+apiLog = '/lib/bruby_proxy/logs/%s_API_CALLS.txt' % logStamp
 
 class S(BaseHTTPRequestHandler):
     def _set_headers(self):
@@ -61,7 +61,7 @@ def run(server_class=HTTPServer, handler_class=S, port=80):
 |  _   | |    __  || |   | ||  _   | |_     _|
 | |_|   ||   |  | || |___| || |_|   |  |   |
 |_______||___|  |_||_______||_______|  |___| """
-    print '01 start this server as sudo on port 80 -> "python sudo bruby-proxy.py 80"'
+    print '01 start this server as sudo on port 80 -> "sudo python bruby-proxy.py 80"'
     print '02 start internet sharing'
     print '03 set dnsmasq to address=/targetURL.com/your.actual.ip.address'
     print '*** note - use the ip of the shared connection (WIFI, not connected to your router)'
