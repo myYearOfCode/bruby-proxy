@@ -27,13 +27,13 @@ class S(BaseHTTPRequestHandler):
         if parsed.path in ignoreArray: #filter for favicon requests chrome and safari
             pass
         else:
-            print "get req is %s" % parsed.path
-            print "parsed.query is %s" % parsed.query
+            print ("get req is %s" % parsed.path)
+            print ("parsed.query is %s" % parsed.query)
             url = ('https://bruby-app.herokuapp.com%s?%s' % (parsed.path, parsed.query))
-            print url
+            print (url)
             response = urllib2.urlopen(url)
             html = response.read()
-            print html
+            print (html)
             self._set_headers()
             self.wfile.write(html) #this sends the server response
             print ("sent response")
@@ -52,25 +52,25 @@ class S(BaseHTTPRequestHandler):
 def run(server_class=HTTPServer, handler_class=S, port=80):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
-    print 'Starting httpd...'
-    print """
+    print ('Starting httpd...')
+    print ("""
  _______  ______    _     _  _______  __   __
 |  _    ||    _ |  | |   | ||  _    ||  | |  |
 | |_|   ||   | ||  | |   | || |_|   ||  |_|  |
 |       ||   |_||_ | |   | ||       ||       |
 |  _   | |    __  || |   | ||  _   | |_     _|
 | |_|   ||   |  | || |___| || |_|   |  |   |
-|_______||___|  |_||_______||_______|  |___| """
-    print '01 start this server as sudo on port 80 -> "sudo python bruby-proxy.py 80"'
-    print '02 start internet sharing'
-    print '03 set dnsmasq to address=/targetURL.com/your.actual.ip.address'
-    print '*** note - use the ip of the shared connection (WIFI, not connected to your router)'
-    print '04 reset the dns server with'
-    print '"sudo launchctl stop homebrew.mxcl.dnsmasq"'
-    print '"sudo launchctl start homebrew.mxcl.dnsmasq"'
-    print '05 these commands should give you info on the redirect.'
-    print '"dig @127.0.0.1 +short targetURL.com" and "nslookup targetURL.com"'
-    print 'Have a great brew!'
+|_______||___|  |_||_______||_______|  |___| """)
+    print ('01 start this server as sudo on port 80 -> "sudo python bruby-proxy.py 80"')
+    print ('02 start internet sharing')
+    print ('03 set dnsmasq to address=/targetURL.com/your.actual.ip.address')
+    print ('*** note - use the ip of the shared connection (WIFI, not connected to your router)')
+    print ('04 reset the dns server with')
+    print ('"sudo launchctl stop homebrew.mxcl.dnsmasq"')
+    print ('"sudo launchctl start homebrew.mxcl.dnsmasq"')
+    print ('05 these commands should give you info on the redirect.')
+    print ('"dig @127.0.0.1 +short targetURL.com" and "nslookup targetURL.com"')
+    print ('Have a great brew!')
     httpd.serve_forever()
 
 if __name__ == "__main__":

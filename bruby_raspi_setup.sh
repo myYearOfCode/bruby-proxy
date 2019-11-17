@@ -1,21 +1,20 @@
 #this file will set a raspberry pi zero w up as a proxy server to redirect
-#from picobrew to 
+#from picobrew to bruby
 #hardware: 
-#raspi zero w with a usb wifi card connected.
+#raspi zero w with a usb wifi dongle connected.
 #STEPS
 # image raspbian onto a memory card.
 # mount the card and copy wpa_supplicant.conf with your pertinent wifi creds 
 # onto the boot volume.
 # create a file named `ssh` on the boot volume (unless you want to connect another way)
 # eject card, start up raspberry pi and ssh in.
-# wget https://raw.githubusercontent.com/myYearOfCode/bruby-proxy/master/bruby_raspi_setup.sh
-# chmod +x bruby_raspi_setup.sh 
-# sudo ./bruby_raspi_setup.sh (and then wait a while for updates to happen)
+# wget https://raw.githubusercontent.com/myYearOfCode/bruby-proxy/master/bruby_raspi_setup.sh && chmod +x bruby_raspi_setup.sh && sudo ./bruby_raspi_setup.sh 
+#(and then wait a while for updates to happen)
 #######
 # when you are finished a new network should appear named 'bruby' with the p: 'brubybruby'
 # logging in should give you internet, but will redirect picobrew to bruby.
-# NOTE: most browsers cache if a site is using https, so they will not work with this.
-# test this with 'curl picobrew.com' and you should get bruby mentions.
+# NOTE: most browsers cache if a site is using https, so they aren't a good test.
+# test this with 'curl picobrew.com' and you should get bruby mentions in the html.
 #######
 #hotspot setup
 cd /usr/local/sbin
